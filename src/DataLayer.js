@@ -11,4 +11,5 @@ export const DataLayer=({ initialState,
     </DataLayerContext.Provider>
 )
 
+// by providing DataLayerContext in useContext now unseReducer function is available to all the components using useDataLayerValue function
 export const useDataLayerValue=()=>useContext(DataLayerContext) 

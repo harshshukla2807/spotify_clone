@@ -29,6 +29,7 @@ function App() {
     }
     
     spotify.setAccessToken(_token)
+    
     spotify.getMe().then((user)=>{
       // console.log(user)
       
@@ -37,9 +38,17 @@ function App() {
         type: "SET_USER",
         user: user
       })
-      
     })
     
+    async function fetchPlaylists(){
+      const playlists= await spotify.getUserPlaylists()
+      console.log(playlists)
+      dispatch({
+        type: "SET_PLAYLISTS",
+        playlists: playlists
+      })
+    }
+    fetchPlaylists()
   },[])
   
   

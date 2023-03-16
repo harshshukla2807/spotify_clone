@@ -16,12 +16,17 @@ const reducer= (state,action)=>{
           user:action.user
       };
       
-     case "SET_TOKEN":
-      return{
-          ...state,
-          token: action.token
-      }
-      
+      case "SET_TOKEN":
+       return{
+           ...state,
+           token: action.token
+       }
+       
+       case "SET_PLAYLISTS":
+        return{
+            ...state,
+            playlists: action.playlists
+        }
       default: 
       return state
     }
