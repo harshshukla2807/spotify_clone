@@ -8,6 +8,7 @@ export const DataLayer=({ initialState,
 })=>(
     <DataLayerContext.Provider value={useReducer(reducer,initialState)}>
        {children}
+       {/* {console.log(initialState)} */}
     </DataLayerContext.Provider>
 )
 

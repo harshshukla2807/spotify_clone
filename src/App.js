@@ -26,12 +26,12 @@ function App() {
         type: "SET_TOKEN",
         token:_token
       })
+      // console.log(_token)
     }
     
     spotify.setAccessToken(_token)
     
     spotify.getMe().then((user)=>{
-      // console.log(user)
       
       // setting up user with dispatch to dataLayer passing it to reducer
       dispatch({
@@ -42,15 +42,24 @@ function App() {
     
     async function fetchPlaylists(){
       const playlists= await spotify.getUserPlaylists()
-      console.log(playlists)
       dispatch({
         type: "SET_PLAYLISTS",
         playlists: playlists
       })
     }
     fetchPlaylists()
+    
+    spotify.getPlaylist('37i9dQZEVXcQieor0fiJeH').then(response=>{
+      dispatch({
+        type: "SET_DISCOVER_WEEKLY",
+        discover_weekly: response
+      })
+      // console.log(response)
+    })
+    
   },[])
   
+  // console.log(user)
   
   return (
 // BEM 

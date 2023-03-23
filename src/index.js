@@ -11,7 +11,7 @@ root.render(
    <DataLayer initialState={initialState} reducer={reducer}>
     <App />
    </DataLayer>
-  </React.StrictMode>
+   </React.StrictMode>
 );
 
 
